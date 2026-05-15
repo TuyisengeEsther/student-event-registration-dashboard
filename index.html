@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- NAVBAR -->
+<nav class="flex justify-between items-center bg-blue-600 text-white p-4 shadow">
+    <h1 class="font-bold text-xl">Student Events</h1>
+
+    <input id="searchInput" placeholder="Search events..."
+        class="p-2 rounded text-black" />
+</nav>
+
+<!-- HERO -->
+<section class="text-center p-10 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+    <h2 class="text-3xl font-bold">Event Registration Dashboard</h2>
+    <p>Register, manage and track school events easily</p>
+</section>
+
+<!-- STATS -->
+<section class="grid grid-cols-3 text-center p-4 gap-4">
+    <div class="bg-white p-4 rounded shadow">
+        Total Events: <span id="totalEvents">0</span>
+    </div>
+
+    <div class="bg-white p-4 rounded shadow">
+        Registered: <span id="totalRegistered">0</span>
+    </div>
+
+    <div class="bg-white p-4 rounded shadow">
+        Remaining Seats: <span id="remainingSeats">0</span>
+    </div>
+</section>
+
+<!-- EVENT LIST -->
+<section id="eventContainer" class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+</section>
+
+<!-- ADD EVENT FORM -->
+<section class="p-4">
+    <form id="eventForm" class="bg-white p-4 rounded shadow space-y-2">
+
+        <input id="title" placeholder="Event Title"
+            class="w-full p-2 border rounded" />
+
+        <input id="category" placeholder="Category"
+            class="w-full p-2 border rounded" />
+
+        <input id="seats" type="number" placeholder="Seats"
+            class="w-full p-2 border rounded" />
+
+        <button class="bg-green-500 text-white p-2 rounded w-full">
+            Add Event
+        </button>
+    </form>
+</section>
+
+
+
+</body>
+</html>
