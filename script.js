@@ -154,3 +154,14 @@ function renderFilteredEvents(filteredEvents) {
 
     updateStats();
 }
+
+function updateStats() {
+    document.getElementById("totalEvents").textContent = events.length;
+
+    let totalRegistered = events.reduce((sum, e) => sum + e.registered, 0);
+    document.getElementById("totalRegistered").textContent = totalRegistered;
+
+    let remaining = events.reduce((sum, e) => sum + (e.seats - e.registered), 0);
+    document.getElementById("remainingSeats").textContent = remaining;
+}
+
