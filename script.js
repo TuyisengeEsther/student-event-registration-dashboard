@@ -16,3 +16,11 @@ let events = [
         registered: 20
     }
 ];
+
+
+function loadFromLocalStorage() {
+    let data = localStorage.getItem("events");
+    if (data) {
+        events = JSON.parse(data);
+    }
+}
