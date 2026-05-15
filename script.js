@@ -165,3 +165,5 @@ function updateStats() {
     document.getElementById("remainingSeats").textContent = remaining;
 }
 
+loadFromLocalStorage();
+renderEvents();
