@@ -62,3 +62,14 @@ function renderEvents() {
     updateStats();
 }
 
+function register(id) {
+    let event = events.find(e => e.id === id);
+
+    if (event.registered < event.seats) {
+        event.registered++;
+        saveToLocalStorage();
+        renderEvents();
+    } else {
+        alert("No seats available!");
+    }
+}
