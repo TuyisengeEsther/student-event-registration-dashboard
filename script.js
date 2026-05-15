@@ -24,3 +24,7 @@ function loadFromLocalStorage() {
         events = JSON.parse(data);
     }
 }
+
+function saveToLocalStorage() {
+    localStorage.setItem("events", JSON.stringify(events));
+}
