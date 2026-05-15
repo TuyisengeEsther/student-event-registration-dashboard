@@ -73,3 +73,41 @@ function register(id) {
         alert("No seats available!");
     }
 }
+
+function cancel(id) {
+    let event = events.find(e => e.id === id);
+
+    if (event.registered > 0) {
+        event.registered--;
+        saveToLocalStorage();
+        renderEvents();
+    }
+}
+
+document.getElementById("eventForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let title = document.getElementById("title").value.trim();
+    let category = document.getElementById("category").value.trim();
+    let seats = parseInt(document.getElementById("seats").value);
+
+    if (!title || !category || seats <= 0) {
+        alert("Please enter valid event data");
+        return;
+    }
+
+    let newEvent = {
+        id: Date.now(),
+        title,
+        category,
+        seats,
+        registered: 0
+    };
+
+    events.push(newEvent);
+
+    saveToLocalStorage();
+    renderEvents();
+
+    this.reset();
+});
